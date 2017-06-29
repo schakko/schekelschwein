@@ -61,7 +61,7 @@ else {
     $hosts = 0;
 
     foreach ($dir as $fileinfo) {
-        if ($fileinfo->isDot()) {
+	if ($fileinfo->isDot() || (0 === strpos($fileinfo->getFilename(), "."))) 
             continue;
         }
 
