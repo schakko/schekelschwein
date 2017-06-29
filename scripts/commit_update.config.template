@@ -1,0 +1,5 @@
+SECRET_KEY=""
+MINING_RIG=`hostname`
+HTTP_ENDPOINT="http://localhost"
+TMP_FILE=/tmp/stat.txt
+
