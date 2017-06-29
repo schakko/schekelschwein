@@ -1,0 +1,9 @@
+<?php
+// shared secret for API access
+define("SHARED_SECRET_API", "");
+
+// shared secret for user access
+define("SHARED_SECRET_USER", "");
+
+// directory with uploaded content
+define("DATA_DIR", dirname(__FILE__) . '/data');
