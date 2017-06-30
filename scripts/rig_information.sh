@@ -14,8 +14,8 @@ echo "<<<hostname"
 
 # IP
 echo ">>>ifconfig"
-for device in `ifconfig | grep 'flags' | cut -d: -f1 | awk '{ print $1}'`; do
-        echo `/sbin/ifconfig $device | grep 'inet ' | cut -d: -f3 | awk '{ print $2}'`
+for device in `/usr/sbin/ifconfig | grep 'flags' | cut -d: -f1 | awk '{ print $1}'`; do
+        echo `/usr/sbin/ifconfig $device | grep 'inet ' | cut -d: -f3 | awk '{ print $2}'`
 done
 echo "<<<ifconfig" 
 
