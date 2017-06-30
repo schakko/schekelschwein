@@ -10,14 +10,14 @@ function isPrincipalKnown($principal) {
         return true;
     }
 
-    if (0 !== stpros($principal, '0x')) {
+    if (0 !== strpos($principal, '0x')) {
         return false;
     }
 
     $dir = new DirectoryIterator(DATA_DIR);
 
     foreach ($dir as $fileinfo) {
-        if (!$fileinfo->isDot()) {
+	if ($fileinfo->isDot() || (0 === strpos($fileinfo->getFilename(), "."))) 
             $content = file_get_contents($fileinfo->getPathname());
 
             preg_match_all("/ethminer.*-O (\w+)\/.*/", $content, $matches, PREG_SET_ORDER);
