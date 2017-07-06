@@ -27,14 +27,14 @@ echo "<<<nvidia"
 
 # Processes
 echo ">>>processes" 
-echo `ps aux | grep ethminer | grep -v "grep"`
+echo `ps aux | grep miner | grep -v "grep"`
 echo "<<<processes" 
 
 echo ">>>mining-logs" 
 
 echo "<<<mining-logs"
 
-for service in `systemctl list-units | grep "ethminer@" | cut -d: -f1 | awk '{ print $1 }'`; do
+for service in `systemctl list-units | grep "miner@" | cut -d: -f1 | awk '{ print $1 }'`; do
         echo ">>>mining-log:$service" 
         content=`journalctl -u $service -n 20`
         echo "$content"

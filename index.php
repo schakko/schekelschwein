@@ -20,7 +20,7 @@ function isPrincipalKnown($principal) {
 	if ($fileinfo->isDot() || (0 === strpos($fileinfo->getFilename(), "."))) 
             $content = file_get_contents($fileinfo->getPathname());
 
-            preg_match_all("/ethminer.*-O (\w+)\/.*/", $content, $matches, PREG_SET_ORDER);
+            preg_match_all("/\s(\w+)\/rig(\d+)\/.*/", $content, $matches, PREG_SET_ORDER);
 
             foreach ($matches as $match) {
                 if ($match[1] == $principal) {
